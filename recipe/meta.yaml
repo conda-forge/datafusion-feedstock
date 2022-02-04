@@ -17,6 +17,7 @@ build:
 
 requirements:
   build:
+    - python
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
