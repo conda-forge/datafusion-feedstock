@@ -10,13 +10,15 @@ source:
   sha256: f98aa882d78a7cd86d23641b557bffe422169b73dc387eb9dddc0e366e5970bf
 
 build:
-  number: 1
+  number: 2
   script:
     - "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
     - "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
