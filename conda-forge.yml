@@ -4,3 +4,6 @@ bot:
   automerge: true
   check_solvable: true
   run_deps_from_wheel: true
+build_platform:
+  osx_arm64: osx_64
+test_on_native_only: true
