@@ -10,6 +10,7 @@ source:
   sha256: c622c0fa1965a16ca09537a31fd1c7ed2b2fc6d15225eeff66331a44db975579
 
 build:
+  noarch: python
   number: 0
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
@@ -18,7 +19,8 @@ build:
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+#    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+#    - linux_64_python3.7.____cpython
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
