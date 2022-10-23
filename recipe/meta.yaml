@@ -18,14 +18,14 @@ build:
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
+    - python >=3.7                                 # [build_platform != target_platform]
 #    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
 #    - linux_64_python3.7.____cpython
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
   host:
-    - python
+    - python >=3.7
     - maturin
     - pip
   run:
@@ -34,6 +34,7 @@ requirements:
     - pandas
     - pyarrow
     - importlib-metadata
+    - maturin
 
 test:
   imports:
