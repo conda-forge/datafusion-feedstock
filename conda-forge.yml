@@ -1,12 +1,5 @@
 channel_priority: strict
-conda_forge_output_validation: true
-bot:
-  automerge: true
-  check_solvable: true
-  run_deps_from_wheel: true
-build_platform:
-  osx_arm64: osx_64
-test_on_native_only: true
-github:
-  branch_name: main
-  tooling_branch_name: main
+azure:
+  settings_win:
+    pool:
+      vmImage: windows-2019
