@@ -26,7 +26,7 @@ requirements:
     - cargo-bundle-licenses
   host:
     - python
-    - maturin  # [not win]
+    - maturin
     - pip
   run:
     - python
