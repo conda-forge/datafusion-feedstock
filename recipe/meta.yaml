@@ -1,5 +1,5 @@
 {% set name = "datafusion" %}
-{% set version = "0.4.0" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,15 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f98aa882d78a7cd86d23641b557bffe422169b73dc387eb9dddc0e366e5970bf
+  sha256: c622c0fa1965a16ca09537a31fd1c7ed2b2fc6d15225eeff66331a44db975579
+  
 
 build:
-  number: 2
+  number: 0
+#  skip: true  # [win]
   script:
-    - "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-    - "{{ PYTHON }} -m pip install . -vv"
+    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -28,13 +30,21 @@ requirements:
     - pip
   run:
     - python
-    - numpy
-    - pandas
-    - pyarrow
+    - numpy  # [linux]
+    - pandas  # [linux]
+    - pyarrow >=1
+    - importlib_metadata  # [py<38]
+    - importlib-metadata  # [py<38]
+    - libgcc-ng  # [linux]
+    - maturin  # [linux]
 
 test:
   imports:
     - datafusion
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://arrow.apache.org/datafusion
