@@ -26,8 +26,8 @@ requirements:
     - cargo-bundle-licenses
   host:
     - python
-    - maturin  # [not win]
     - pip
+    - maturin  # [not win]    
   run:
     - python
     - numpy  # [linux]
