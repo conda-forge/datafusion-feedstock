@@ -4,5 +4,6 @@
 
 jobs:
   - template: ./.azure-pipelines/azure-pipelines-linux.yml
-  - template: ./.azure-pipelines/azure-pipelines-win.yml
   - template: ./.azure-pipelines/azure-pipelines-osx.yml
+# Temporary Disable to release without Windows  
+#  - template: ./.azure-pipelines/azure-pipelines-win.yml  
