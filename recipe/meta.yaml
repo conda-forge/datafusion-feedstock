@@ -1,5 +1,5 @@
 {% set name = "datafusion" %}
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c622c0fa1965a16ca09537a31fd1c7ed2b2fc6d15225eeff66331a44db975579
-  
+  sha256: 5d85d9328acfb3651eec4dfc0c049de2b9b1bd7d30971f00eac0a901b6148782
+
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
