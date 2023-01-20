@@ -219,5 +219,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@andygrove](https://github.com/andygrove/)
 * [@cpcloud](https://github.com/cpcloud/)
 
