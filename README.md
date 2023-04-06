@@ -1,11 +1,11 @@
-About datafusion
-================
+About datafusion-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/datafusion-feedstock/blob/main/LICENSE.txt)
 
 Home: https://arrow.apache.org/datafusion
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/datafusion-feedstock/blob/main/LICENSE.txt)
 
 Summary: Extensible query execution framework
 
