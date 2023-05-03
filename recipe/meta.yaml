@@ -1,5 +1,5 @@
 {% set name = "datafusion" %}
-{% set version = "0.7.0" %}
+{% set version = "23.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,36 +7,25 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5d85d9328acfb3651eec4dfc0c049de2b9b1bd7d30971f00eac0a901b6148782
+  sha256: b34a819f80fba9a9f3b48e226bf0df53d68c703a2bfabaae7e01e99ca4705c60
 
 
 build:
   number: 0
-  skip: true  # [win]
-  script:
-    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-    - {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - {{ compiler('c') }}
     - {{ compiler('rust') }}
-    - cargo-bundle-licenses
+    - maturin >=0.14,<0.15
+    - libprotobuf =3
   host:
-    - python
     - pip
-    - maturin  # [not win]    
+    - python
+    - maturin >=0.14,<0.15
   run:
     - python
-    - numpy  # [linux]
-    - pandas  # [linux]
-    - pyarrow >=1
-    - importlib_metadata  # [py<38]
-    - importlib-metadata  # [py<38]
-    - libgcc-ng  # [linux]
-    - maturin  # [linux]
+    - pyarrow >=11.0.0
 
 test:
   imports:
@@ -50,9 +39,7 @@ about:
   home: https://arrow.apache.org/datafusion
   license: Apache-2.0
   license_family: APACHE
-  license_file:
-    - LICENSE.txt
-    - THIRDPARTY.yml
+  license_file: LICENSE.txt
   summary: Extensible query execution framework
   description: |
     DataFusion is an extensible query execution framework, written in Rust,
