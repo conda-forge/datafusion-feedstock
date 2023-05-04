@@ -12,11 +12,14 @@ source:
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - {{ compiler('rust') }}
+    - cargo-bundle-licenses
     - maturin >=0.14,<0.15
     - libprotobuf =3
   host:
@@ -39,7 +42,9 @@ about:
   home: https://arrow.apache.org/datafusion
   license: Apache-2.0
   license_family: APACHE
-  license_file: LICENSE.txt
+  license_file:
+    - LICENSE.txt
+    - THIRDPARTY.yml
   summary: Extensible query execution framework
   description: |
     DataFusion is an extensible query execution framework, written in Rust,
