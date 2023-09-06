@@ -1,5 +1,5 @@
 {% set name = "datafusion" %}
-{% set version = "23.0.0" %}
+{% set version = "28.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b34a819f80fba9a9f3b48e226bf0df53d68c703a2bfabaae7e01e99ca4705c60
+  sha256: c40d2b79754a3e051d0c5b00827d7ed32cdb5cf78d26b0738e631dcd63160209
 
 
 build:
@@ -20,12 +20,12 @@ requirements:
   build:
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
-    - maturin >=0.14,<0.15
+    - maturin >=0.15,<0.16
     - libprotobuf =3
   host:
-    - pip
     - python
-    - maturin >=0.14,<0.15
+    - maturin >=0.15,<0.16
+    - pip
   run:
     - python
     - pyarrow >=11.0.0
