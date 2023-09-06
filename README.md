@@ -248,5 +248,6 @@ Feedstock Maintainers
 =====================
 
 * [@andygrove](https://github.com/andygrove/)
+* [@charlesbluca](https://github.com/charlesbluca/)
 * [@cpcloud](https://github.com/cpcloud/)
 
