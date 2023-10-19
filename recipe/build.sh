@@ -2,7 +2,7 @@
 
 set -ex
 
-export RUST_BACKTRACE=1
+export RUST_BACKTRACE=full
 
 # See https://github.com/conda-forge/rust-feedstock/blob/master/recipe/build.sh for cc env explanation
 if [ "$c_compiler" = gcc ] ; then
