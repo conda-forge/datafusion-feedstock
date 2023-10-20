@@ -11,10 +11,7 @@ source:
 
 
 build:
-  number: 1
-  script:
-    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-    - {{ PYTHON }} -m pip install . -vv
+  number: 2
 
 requirements:
   build:
