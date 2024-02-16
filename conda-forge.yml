@@ -2,9 +2,11 @@ azure:
   free_disk_space: true
   settings_linux:
     swapfile_size: 10GiB
+bot:
+  automerge: true
 build_platform:
-  osx_arm64: osx_64
   linux_aarch64: linux_64
+  osx_arm64: osx_64
 conda_build:
   pkg_format: '2'
 conda_forge_output_validation: true
@@ -15,5 +17,3 @@ provider:
   linux_aarch64: default
   win: azure
 test: native_and_emulated
-bot:
-  automerge: true
