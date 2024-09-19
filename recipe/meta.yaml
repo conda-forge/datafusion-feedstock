@@ -1,5 +1,5 @@
 {% set name = "datafusion" %}
-{% set version = "40.1.0" %}
+{% set version = "41.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7c7cfd2bcf491adcf6580f0ff5882ca9fc658dbdab30802ad46889e417965cc6
+  sha256: b2124bcd976520a8dbcb456c200f2cb8b1343285e9329fe757aa628bbd0b08f7
 
 
 build:
