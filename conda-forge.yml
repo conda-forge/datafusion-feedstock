@@ -4,7 +4,7 @@ azure:
     - cache
     - docker
   settings_linux:
-    swapfile_size: 10GiB
+    swapfile_size: 20GiB
   settings_win:
     variables:
       SET_PAGEFILE: 'True'
