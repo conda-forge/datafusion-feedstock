@@ -36,7 +36,7 @@ test:
   commands:
     - pip check
     - python -c 'from importlib.util import find_spec; assert find_spec("datafusion")'
-    - python -c 'import datafusion'                                                     # [build_platform != target_platform]
+    - python -c 'import datafusion'                                                     # [build_platform == target_platform]
   requires:
     - pip
 
