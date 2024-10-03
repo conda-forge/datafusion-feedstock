@@ -16,6 +16,15 @@ if [ "$c_compiler" = gcc ] ; then
     export CARGO_TARGET_${rust_env_arch}_LINKER=$CC
 fi
 
+# Taken from clangdev's recipe
+# https://github.com/conda-forge/clangdev-feedstock/blob/01fc5e3e0fc690db85151dcb3ff512e6aa876be7/recipe/build.sh#L51-L56
+# disable -fno-plt due to some GCC bug causing linker errors, see
+# https://github.com/llvm/llvm-project/issues/51205
+if [[ "$target_platform" == "linux-ppc64le" ]]; then
+  CFLAGS="$(echo $CFLAGS | sed 's/-fno-plt //g')"
+  CXXFLAGS="$(echo $CXXFLAGS | sed 's/-fno-plt //g')"
+fi
+
 declare -a _xtra_maturin_args
 
 mkdir -p $SRC_DIR/.cargo
