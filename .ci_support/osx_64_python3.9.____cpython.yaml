@@ -11,7 +11,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 libprotobuf:
-- 5.27.5
+- 5.28.2
 macos_machine:
 - x86_64-apple-darwin13.4.0
 pin_run_as_build:
