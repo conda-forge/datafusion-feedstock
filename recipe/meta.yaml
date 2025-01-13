@@ -21,11 +21,11 @@ requirements:
     - {{ compiler('rust') }}
     - {{ stdlib('c') }}
     - cargo-bundle-licenses
-    - maturin >=1.5.1,<1.6.0
+    - maturin >=1.8.1,<2
   host:
     - libprotobuf
     - python
-    - maturin >=1.5.1,<1.6.0
+    - maturin >=1.8.1,<2
     - pip
   run:
     - python
