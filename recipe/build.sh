@@ -21,10 +21,9 @@ fi
 # disable -fno-plt due to some GCC bug causing linker errors, see
 # https://github.com/llvm/llvm-project/issues/51205
 if [[ "$target_platform" == "linux-ppc64le" ]]; then
-  CFLAGS="$(echo $CFLAGS | sed 's/-fno-plt //g')"
-  CXXFLAGS="$(echo $CXXFLAGS | sed 's/-fno-plt //g')"
+  export CFLAGS="$(echo $CFLAGS | sed 's/-fno-plt //g')"
+  export CXXFLAGS="$(echo $CXXFLAGS | sed 's/-fno-plt //g')"
 fi
-
 declare -a _xtra_maturin_args
 
 mkdir -p $SRC_DIR/.cargo
