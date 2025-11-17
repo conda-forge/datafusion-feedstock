@@ -12,6 +12,8 @@ source:
 
 build:
   number: 2
+  # relocation errors; please open a PR to debug it if it's important to you
+  skip: true  # [ppc64le]
 
 requirements:
   build:
