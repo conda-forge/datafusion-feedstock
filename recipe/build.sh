@@ -23,6 +23,7 @@ fi
 if [[ "$target_platform" == "linux-ppc64le" ]]; then
   export CFLAGS="$(echo $CFLAGS | sed 's/-fno-plt //g') -mlongcall"
   export CXXFLAGS="$(echo $CXXFLAGS | sed 's/-fno-plt //g')"
+  export CARGO_PROFILE_RELEASE_LTO="thin"
 fi
 declare -a _xtra_maturin_args
 
