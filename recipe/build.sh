@@ -3,6 +3,7 @@
 set -ex
 
 export RUST_BACKTRACE=full
+export CARGO_PROFILE_RELEASE_LTO="thin"
 
 declare -a _xtra_maturin_args
 
@@ -25,8 +26,8 @@ fi
 if [[ "$target_platform" == "linux-ppc64le" ]]; then
   export CFLAGS="$(echo $CFLAGS | sed 's/-fno-plt //g') -mlongcall"
   export CXXFLAGS="$(echo $CXXFLAGS | sed 's/-fno-plt //g')"
-  export CARGO_PROFILE_RELEASE_LTO="thin"
 
+  # Default feature is mimalloc, which fails on ppc64le
   _xtra_maturin_args+=(--no-default-features)
 fi
 
