@@ -4,6 +4,8 @@ set -ex
 
 export RUST_BACKTRACE=full
 
+declare -a _xtra_maturin_args
+
 # See https://github.com/conda-forge/rust-feedstock/blob/master/recipe/build.sh for cc env explanation
 if [ "$c_compiler" = gcc ] ; then
     case "$target_platform" in
@@ -24,8 +26,9 @@ if [[ "$target_platform" == "linux-ppc64le" ]]; then
   export CFLAGS="$(echo $CFLAGS | sed 's/-fno-plt //g') -mlongcall"
   export CXXFLAGS="$(echo $CXXFLAGS | sed 's/-fno-plt //g')"
   export CARGO_PROFILE_RELEASE_LTO="thin"
+
+  _xtra_maturin_args+=(--no-default-features)
 fi
-declare -a _xtra_maturin_args
 
 mkdir -p $SRC_DIR/.cargo
 
