@@ -7,6 +7,8 @@ export CARGO_PROFILE_RELEASE_LTO="thin"
 
 declare -a _xtra_maturin_args
 
+_xtra_maturin_args+=(--features "substrait")
+
 # See https://github.com/conda-forge/rust-feedstock/blob/master/recipe/build.sh for cc env explanation
 if [ "$c_compiler" = gcc ] ; then
     case "$target_platform" in
