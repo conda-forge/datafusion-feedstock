@@ -5,6 +5,8 @@ set -ex
 export RUST_BACKTRACE=full
 export CARGO_PROFILE_RELEASE_LTO="thin"
 
+mkdir -p $SRC_DIR/.cargo
+
 declare -a _xtra_maturin_args
 
 _xtra_maturin_args+=(--features "substrait")
@@ -42,7 +44,6 @@ if [[ "$target_platform" == "linux-ppc64le" ]]; then
 
 fi
 
-mkdir -p $SRC_DIR/.cargo
 
 if [ "$target_platform" = "osx-64" ] ; then
     cat <<EOF >> $SRC_DIR/.cargo/config
