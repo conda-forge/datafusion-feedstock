@@ -31,6 +31,15 @@ if [[ "$target_platform" == "linux-ppc64le" ]]; then
 
   # Default feature is mimalloc, which fails on ppc64le
   _xtra_maturin_args+=(--no-default-features)
+
+  (
+    echo '# Required for intermediate codegen stuff'
+    echo '[target.x86_64-unknown-linux-gnu]'
+    echo 'linker = "'$CC_FOR_BUILD'"'
+    echo '[target.*]'
+    echo 'linker = "'$CC'"'
+  ) >> $SRC_DIR/.cargo/config
+
 fi
 
 mkdir -p $SRC_DIR/.cargo
