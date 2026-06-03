@@ -1,12 +1,11 @@
-{% set name = "datafusion" %}
 {% set version = "53.0.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: datafusion
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/d/datafusion/datafusion-{{ version }}.tar.gz
   sha256: ba9a5ec06b5453fbd8710d6aeeb515a8bcac4b6c140e254409bb53a5f322ef22
 
 
