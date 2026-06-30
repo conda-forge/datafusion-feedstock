@@ -1,4 +1,4 @@
-{% set version = "53.0.0" %}
+{% set version = "54.0.0" %}
 
 package:
   name: datafusion
@@ -6,11 +6,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/d/datafusion/datafusion-{{ version }}.tar.gz
-  sha256: ba9a5ec06b5453fbd8710d6aeeb515a8bcac4b6c140e254409bb53a5f322ef22
+  sha256: cfe7e8dfc026efc05824f49b53ad6a72caf5c2d6820759b6212a09e245a427ed
 
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -28,6 +28,7 @@ requirements:
     - pip
   run:
     - python
+    - cloudpickle
     - pyarrow >=11.0.0
     - typing_extensions
 
