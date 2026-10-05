@@ -1,16 +1,16 @@
-{% set version = "54.0.0" %}
+{% set version = "54.1.0" %}
 
 package:
   name: datafusion
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/d/datafusion/datafusion-{{ version }}.tar.gz
-  sha256: cfe7e8dfc026efc05824f49b53ad6a72caf5c2d6820759b6212a09e245a427ed
+  url: https://files.pythonhosted.org/packages/source/d/datafusion/datafusion-{{ version }}.tar.gz
+  sha256: 0045864afee13a137b92c40406fe59f0dba46deb8f4f0c933bf7c74591946c58
 
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
