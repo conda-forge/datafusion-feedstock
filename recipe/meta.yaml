@@ -1,4 +1,4 @@
-{% set version = "54.1.0" %}
+{% set version = "55.0.0" %}
 
 package:
   name: datafusion
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/d/datafusion/datafusion-{{ version }}.tar.gz
-  sha256: 0045864afee13a137b92c40406fe59f0dba46deb8f4f0c933bf7c74591946c58
+  sha256: 12ac1a7666cd61533f610d38173347aa42189b7a1a78c78bb166052b680ffb6d
 
 
 build:
